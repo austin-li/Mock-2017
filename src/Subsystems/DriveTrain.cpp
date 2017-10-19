@@ -14,5 +14,8 @@ double DriveTrain::getUltra() {
 	return ultrasonicSensor->GetRangeInches();
 }
 
+void DriveTrain::setSpeed(double speed) {
+	driveMotor->Set(speed);
+}
 // Put methods for controlling this subsystem
 // here. Call these from Commands.

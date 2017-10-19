@@ -16,6 +16,7 @@ public:
 	DriveTrain();
 	void InitDefaultCommand();
 	double getUltra();
+	void setSpeed(double speed);
 };
 
 #endif  // DriveTrain_H
