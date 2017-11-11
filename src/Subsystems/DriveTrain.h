@@ -9,14 +9,16 @@ class DriveTrain : public Subsystem {
 private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
-	Jaguar* driveMotor;
+	Jaguar* leftMotor;
+	Jaguar* rightMotor;
 	Ultrasonic* ultrasonicSensor;
 
 public:
 	DriveTrain();
 	void InitDefaultCommand();
 	double getUltra();
-	void setSpeed(double speed);
+	void tankDrive(double left, double right);
+	void Stop();
 };
 
 #endif  // DriveTrain_H
