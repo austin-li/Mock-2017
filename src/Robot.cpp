@@ -74,7 +74,7 @@ public:
 
 	void TeleopPeriodic() override {
 		frc::Scheduler::GetInstance()->Run();
-		SmartDashboard::PutNumber("Distance is: ", CommandBase::driveTrain->getUltra());
+		SmartDashboard::PutNumber("Distance: ", CommandBase::driveTrain->getUltra());
 	}
 
 	void TestPeriodic() override {
