@@ -2,7 +2,7 @@
 #include "../RobotMap.h"
 #include "Commands/TankDrive.h"
 
-DriveTrain::DriveTrain() : Subsystem("DriveTrain"), leftMotor(new Jaguar(LEFTMOTOR)), rightMotor(new Jaguar(RIGHTMOTOR)),
+DriveTrain::DriveTrain() : Subsystem("DriveTrain"), leftMotor(new CANTalon(LEFTMOTOR)), rightMotor(new CANTalon(RIGHTMOTOR)),
 							ultrasonicSensor(new Ultrasonic(ULTRASONIC_TRIGGER, ULTRASONIC_ECHO)) {
 	ultrasonicSensor->SetAutomaticMode(true);
 }

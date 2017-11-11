@@ -4,13 +4,14 @@
 #include <Commands/Subsystem.h>
 
 #include "WPILib.h"
+#include "ctrlib/CANTalon.h"
 
 class DriveTrain : public Subsystem {
 private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
-	Jaguar* leftMotor;
-	Jaguar* rightMotor;
+	CANTalon* leftMotor;
+	CANTalon* rightMotor;
 	Ultrasonic* ultrasonicSensor;
 
 public:
