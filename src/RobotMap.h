@@ -18,7 +18,10 @@
 // constexpr int RANGE_FINDER_PORT = 1;
 // constexpr int RANGE_FINDER_MODULE = 1;
 
-const int MOTORPORT = 0;
+const int LEFTMOTOR = 0;
+const int RIGHTMOTOR = 1;
+
+const int MULTIPLIER = 3;
 
 const int ULTRASONIC_TRIGGER = 0;
 const int ULTRASONIC_ECHO = 1;
