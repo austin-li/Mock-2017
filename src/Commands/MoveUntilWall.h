@@ -9,6 +9,8 @@ private:
 	double distances[10];
 	int distanceCount;
 	double distance;
+	double leftEncoder;
+	double rightEncoder;
 public:
 	MoveUntilWall(int _distance);
 	void Initialize();

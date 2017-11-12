@@ -1,6 +1,6 @@
 #include "MoveUntilWall.h"
 
-MoveUntilWall::MoveUntilWall(int _distance) :distanceToTravel(_distance), distanceCount(0), distance(999){
+MoveUntilWall::MoveUntilWall(int _distance) :distanceToTravel(_distance), distanceCount(0), distance(999), leftEncoder(0), rightEncoder(0){
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(Robot::chassis.get());
 	Requires(driveTrain);
@@ -13,10 +13,12 @@ void MoveUntilWall::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void MoveUntilWall::Execute() {
-	driveTrain->tankDrive(0.3, 0.3);
+	leftEncoder = driveTrain->leftEncoder();
+	rightEncoder = driveTrain->rightEncoder();
+	driveTrain->tankDrive(0.3 + rightEncoder - leftEncoder, 0.3 + leftEncoder - rightEncoder);
 	if (distanceCount < 10) {
 		distances[distanceCount] = driveTrain->getUltra();
-		distanceCount += 1;
+		distanceCount++;
 	} else {
 		distance = 0;
 		for (int i = 0; i < distanceCount; i++) {
