@@ -13,6 +13,7 @@
 class Robot: public frc::IterativeRobot {
 public:
 	void RobotInit() override {
+		CommandBase::initialize();
 		//chooser.AddDefault("Default Auto", new ExampleCommand());
 		// chooser.AddObject("My Auto", new MyAutoCommand());
 		frc::SmartDashboard::PutData("Auto Modes", &chooser);
@@ -74,7 +75,11 @@ public:
 
 	void TeleopPeriodic() override {
 		frc::Scheduler::GetInstance()->Run();
+		/*
 		SmartDashboard::PutNumber("Distance: ", CommandBase::driveTrain->getUltra());
+		SmartDashboard::PutNumber("Left Encoder", CommandBase::driveTrain->leftEncoder());
+		SmartDashboard::PutNumber("Right Encoder", CommandBase::driveTrain->rightEncoder());
+		*/
 	}
 
 	void TestPeriodic() override {
