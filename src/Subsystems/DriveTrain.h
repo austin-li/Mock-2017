@@ -13,13 +13,14 @@ private:
 	CANTalon* leftMotor;
 	CANTalon* rightMotor;
 	Ultrasonic* ultrasonicSensor;
-
 public:
 	DriveTrain();
 	void InitDefaultCommand();
 	double getUltra();
 	void tankDrive(double left, double right);
 	void Stop();
+	double leftEncoder();
+	double rightEncoder();
 };
 
 #endif  // DriveTrain_H

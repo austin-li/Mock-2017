@@ -26,5 +26,14 @@ void DriveTrain::Stop() {
 	leftMotor->Set(0);
 	rightMotor->Set(0);
 }
+
+double DriveTrain::leftEncoder() {
+	return leftMotor->GetEncPosition();
+}
+
+double DriveTrain::rightEncoder() {
+	return rightMotor->GetEncPosition();
+}
+
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
