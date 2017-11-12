@@ -11,5 +11,9 @@ DriveTrain* CommandBase::driveTrain = nullptr;
 
 CommandBase::CommandBase(const std::string &name) :
 		frc::Command(name) {
+
+}
+
+void CommandBase::initialize() {
 	driveTrain = new DriveTrain();
 }

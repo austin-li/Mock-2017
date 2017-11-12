@@ -23,6 +23,8 @@ public:
 	// Create a single static instance of all of your subsystems
 	static std::unique_ptr<OI> oi;
 	static DriveTrain* driveTrain;
+
+	static void initialize();
 };
 
 #endif  // COMMAND_BASE_H
